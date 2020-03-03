@@ -77,7 +77,7 @@ class circle:
 
             return Inside
 
-    # 计算最大可行半径
+    # 计算最大可行半径，并作为这个圆的半径
     def Max_Radius(self, c_list):
         x = self.center.real
         y = self.center.imag
@@ -85,7 +85,7 @@ class circle:
         R_list = [1 - x, x + 1, 1 - y, y + 1]
 
         if not len(c_list) == 0:
-            # 计算到其他各圆的距离
+            # 计算圆心到其他各圆的距离
             for c in c_list:
                 r = c.Distance(self) + self.radius
                 R_list.append(r)
