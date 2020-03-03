@@ -104,31 +104,31 @@ def Print_All(c_list):
 # 返回这一列表
 def Max_R_Square(circle_num):
     circle_list = []
-    for i in range(circle_num):
-        if i == 0:
-            # 强制第一个圆的圆心为原点，半径为1
-            cir = circle(0, 0, 0)
+    # 向列表中添加新圆，直到总数符合要求
+    while len(circle_list) < circle_num:
+        if len(circle_list) == 0:
+            # 第一个圆，强制设定为单位圆
+            x = 0
+            y = 0
+            r = 1
+        else:
+            # 随机下一个圆的圆心坐标
+            import random
+            x = random.uniform(-1, 1)
+            y = random.uniform(-1, 1)
+            r = 0
+
+        cir = circle(x, y, r)
+        # 判断随机生成的新圆心坐标是否在已经存在的圆内
+        if not cir.Center_Inside(circle_list):
+            # 若不在，则计算这个圆的最大半径，并添加进列表
             cir.Max_Radius(circle_list)
             cir.Append_To(circle_list)
-        else:
-            # 重复以下生成操作，直到列表中的元素数量达到指定值
-            while len(circle_list) < circle_num:
-                # 随机生成圆心坐标
-                import random
-                x = random.uniform(-1, 1)
-                y = random.uniform(-1, 1)
-                r = random.uniform(0, 1)
-                cir = circle(x, y, r)
-                # 判断随机生成的新圆心坐标是否在已经存在的圆内
-                if not cir.Center_Inside(circle_list):
-                    # 若不在，则计算这个圆的最大半径，并添加进列表
-                    cir.Max_Radius(circle_list)
-                    cir.Append_To(circle_list)
     return circle_list
 
 
 if __name__ == "__main__":
-    circle_num = 30
+    circle_num = 1000
     c_list = Max_R_Square(circle_num)
     R2 = Total_R_Square(c_list)
     print("对应圆的参数")
