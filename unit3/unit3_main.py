@@ -9,14 +9,6 @@ class circle:
         self.center = complex(x, y)
         self.radius = abs(r)
 
-    # 改变圆心坐标
-    def change_C(self, x, y):
-        self.center = complex(x, y)
-
-    # 改变圆的半径
-    def change_R(self, r):
-        self.radius = abs(r)
-
     # 输出对象相关信息（圆心，半径）
     def print(self):
         x = self.center.real
@@ -77,7 +69,7 @@ class circle:
 
             return Inside
 
-    # 计算最大可行半径，并作为这个圆的半径
+    # 计算最大可行半径
     def Max_Radius(self, c_list):
         x = self.center.real
         y = self.center.imag
@@ -85,7 +77,7 @@ class circle:
         R_list = [1 - x, x + 1, 1 - y, y + 1]
 
         if not len(c_list) == 0:
-            # 计算圆心到其他各圆的距离
+            # 计算到其他各圆的距离
             for c in c_list:
                 r = c.Distance(self) + self.radius
                 R_list.append(r)
@@ -136,7 +128,7 @@ def Max_R_Square(circle_num):
 
 
 if __name__ == "__main__":
-    circle_num = 20
+    circle_num = 30
     c_list = Max_R_Square(circle_num)
     R2 = Total_R_Square(c_list)
     print("对应圆的参数")
