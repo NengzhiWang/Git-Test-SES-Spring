@@ -2,6 +2,7 @@
 '''
 Author: WangNengzhi
 '''
+
 '''
 主要内容
 
@@ -20,6 +21,9 @@ Author: WangNengzhi
 4. 结果展示
     使用matplotlib进行绘图，展示结果
     方法一和方法二的结果实例见文件'Figure_1.png'和'Figure_2.png'，设置的m为20
+'''
+
+'''
 问题
 
 1. 方法二的优化器获得的是局部最优解，而非全局最优解。因此其结果仍然较小
@@ -258,6 +262,6 @@ if __name__ == "__main__":
     print("sum r^2的最大值为\t", R2)
 
     print("对应圆的参数")
-
     Print_Circle(c_list)
+
     Plot_Circle(c_list)
