@@ -214,6 +214,8 @@ def Optimize_Max_R_Square(c_num):
         if cir_in_list == 0:
             x = 0
             y = 0
+            c = circle(x, y, 1)
+            c.Append_To(c_list)
         else:
             # 在四个象限中轮流初始化
             if mod == 0:
@@ -229,16 +231,16 @@ def Optimize_Max_R_Square(c_num):
                 x = random.uniform(0, 1)
                 y = random.uniform(-1, 0)
 
-        c = circle(x, y, 0)
+            c = circle(x, y, 0)
 
-        # 使用优化器，计算局部最优解
-        Max_Circle = minimize(Center_Optimize(c_list), (c.x, c.y),
-                              method='SLSQP')
-        # 将新圆更新为局部最优解，并添加进列表
-        c.x = float(Max_Circle.x[0])
-        c.y = float(Max_Circle.x[1])
-        c.radius = Max_Radius(c, c_list)
-        c.Append_To(c_list)
+            # 使用优化器，计算局部最优解
+            Max_Circle = minimize(Center_Optimize(c_list), (c.x, c.y),
+                                  method='SLSQP')
+            # 将新圆更新为局部最优解，并添加进列表
+            c.x = float(Max_Circle.x[0])
+            c.y = float(Max_Circle.x[1])
+            c.radius = Max_Radius(c, c_list)
+            c.Append_To(c_list)
 
     return c_list
 
