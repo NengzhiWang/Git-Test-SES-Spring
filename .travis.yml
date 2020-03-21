@@ -5,7 +5,7 @@ python:
 
 # command to install dependencies
 install:
-    - pip install numpy scipy
+    - pip install numpy scipy matplotlib
 # command to run tests
 script:
   - pytest unit4/my_test/unit_test.py
