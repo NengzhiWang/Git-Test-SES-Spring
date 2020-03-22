@@ -6,4 +6,5 @@ install:
     - pip install -r requirements.txt
 
 script:
-  - pytest Git-Test-SES-Spring/unit4/unit_test.py
+  # - pytest Git-Test-SES-Spring/unit4/unit_test.py
+  - pytest unit_test.py

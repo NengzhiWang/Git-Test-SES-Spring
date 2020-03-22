@@ -1,37 +1,44 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Mar 17 15:04:01 2020
+@author: Xiaoyang Zou
+"""
+
 import unittest
-from circle_main import circle
-from circle_main import Total_R_Square, Max_Radius
+import numpy as np
+from circle_main import Circle
+from circle_main import RSquare, MaxAreaCircles
 
 
-class Circle_Test(unittest.TestCase):
-    def init(self):
-        self.c1 = circle(+0.5, +0.5, +0.5)
-        self.c2 = circle(-0.5, +0.5, +0.5)
-        self.c3 = circle(-0.5, -0.5, +0.5)
-        self.c4 = circle(+0.5, -0.5, +0.25)
-        self.c_list = []
-        self.c1.Append_To(self.c_list)
-        self.c2.Append_To(self.c_list)
-        self.c3.Append_To(self.c_list)
+class TestCircle(unittest.TestCase):
+    def setUp(self):
+        self.c1 = Circle(0.5, 0.5, 0.5)
+        self.c2 = Circle(0.5, -0.5, 0.5)
+        self.c3 = Circle(0.5, 0.5, -0.5)
+        self.c4 = Circle(0.5, -0.5, -0.5)
+        self.cl = []
+        self.cl.append(self.c3)
+        self.cl.append(self.c4)
 
-    def Test_In_Range(self):
-        self.assertTrue(self.c1.In_Range())
+    def test_PointJudge(self):
+        self.assertTrue(self.c1.PointJudge(self.cl))
 
-    def Test_R_Square(self):
-        R_true = 3 * (0.5**4)
-        R_test = Total_R_Square(self.c_list)
-        self.assertEqual(R_true, R_test)
+    def test_RSquare(self):
+        r1 = RSquare(self.cl)
+        r2 = 2 * 0.5**2
+        self.assertEqual(r1, r2)
 
-    def Test_Distance(self):
-        D_true = 0
-        D_test = self.c1.Distance(self.c2)
-        self.assertEqual(D_true, D_test)
+    def test_distance(self):
+        d1 = self.c1.distance(self.c2)
+        d2 = np.linalg.norm([self.c1.x - self.c2.x, self.c1.y - self.c2.y])
+        self.assertEqual(d1, d2)
 
-    def Test_Max_R(self):
-        R_true = 0.5
-        R_test = Max_Radius(self.c4, self.c_list)
-        self.assertEqual(R_true, R_test)
+    def test_MaxAreaCircles(self):
+        m = 4
+        cl = MaxAreaCircles(m, False)
+        result = RSquare(cl)
+        self.assertGreaterEqual(result, 1)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main(verbosity=2)
