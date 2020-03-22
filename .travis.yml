@@ -7,4 +7,4 @@ install:
 
 script:
   # - pytest Git-Test-SES-Spring/unit4/unit_test.py
-  - pytest Git-Test-SES-Spring/unit_test.py
+  - pytest ./unit_test.py
