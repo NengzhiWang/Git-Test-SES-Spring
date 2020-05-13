@@ -55,6 +55,10 @@ A: We provide reference in each unit and some reading instruction. This is for s
 2. Types of problem discussed in machine learning.
 3. Introduction to neural networks.
 
+[video: introduction to machine learning @acfun](https://www.acfun.cn/v/ac15348189)
+
+[video: introduction to machine learning @bilibili](https://www.bilibili.com/video/BV1Wz4y1R7dh/)
+
 The material is in c1_intro.
 
 ### 逻辑回归
@@ -63,7 +67,12 @@ The material is in c1_intro.
 2. stochastic gradient descent
 3. input normalization
 4. oversampling/undersampling
-5. capacity/overfitting/underfitting
+
+[video for logistic regression, @acfun](https://www.acfun.cn/v/ac15394923)
+
+[video for logistic regression, @bilibili](https://www.bilibili.com/video/BV1Ta4y1i7E4/)
+
+[pdf for logistic regression](https://github.com/pipehappy1/SES2020spring/blob/master/C2_logistic_regression.pdf)
 
 ### Exercise 1
 
@@ -91,7 +100,33 @@ Note:
 2. MLP by stacking logistic regression
 3. Auto difference i.e. back propagation
 
+Videos:
+
+* [multiLayer-perceptron @acfun](https://www.acfun.cn/v/ac15453604)
+* [multiLayer-perceptron @bilibili](https://www.bilibili.com/video/BV125411s7sH/)
+* [back propagation @acfun](https://www.acfun.cn/v/ac15453964)
+* [back propagation @bilibili](https://www.bilibili.com/video/BV1Ai4y147Aj/)
+
+pdfs:
+
+* [Perceptron and multiLayer-perceptron](https://github.com/pipehappy1/SES2020spring/blob/master/c3_mlp/c3_mlp.pdf)
+* [Back propagation slides from Stanford cs231n](https://github.com/pipehappy1/SES2020spring/blob/master/c3_mlp/lecture_4.pdf)
+* [Back propagation slides from Stanford cs231n (source)](http://cs231n.stanford.edu/slides/2020/lecture_4.pdf)
+
 ### 卷积网络
+
+1. Convolutional operator in convolutional neural network (CNN)
+2. Other layers often used in CNN
+3. Learning tricks
+
+Videos:
+
+* [CNN @acfun](https://www.acfun.cn/v/ac15496062)
+* [CNN @bilibili](https://www.bilibili.com/video/BV16K411W7ma)
+
+pdf:
+
+* [CNN](http://cs231n.stanford.edu/slides/2020/lecture_5.pdf)
 
 ### 其他神经网络模型
 
